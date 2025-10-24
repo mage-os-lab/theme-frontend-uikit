@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 1.0.6
+### Fixed
+- Fix compatibility issue with Mage-OS 1.3.0 and more recent versions due to wikimedia less compiler core dependency inclusion
+
 ## 1.0.5
 ### Updated
 - Fix uikit_whitelist.xml compilation on base module, update base module version to 1.5.0
