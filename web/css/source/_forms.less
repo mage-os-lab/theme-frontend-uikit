@@ -28,13 +28,32 @@
     }
 }
 
+.question-icon-secondary {
+    .mage-svg-fill(@question-svg-icon, "#000", @global-secondary-color);
+}
+.internal-form-select-image {
+    .mage-svg-fill(@internal-form-select-image, "#000", @inverse-form-select-icon-color);
+}
+.internal-form-datalist-image {
+    .mage-svg-fill(@internal-form-datalist-image, "#000", @inverse-form-datalist-icon-color);
+}
+.internal-form-radio-image {
+    .mage-svg-fill(@internal-form-radio-image, "#000", @inverse-form-radio-checked-icon-color);
+}
+.internal-form-checkbox-image {
+    .mage-svg-fill(@internal-form-checkbox-image, "#000", @inverse-form-radio-checked-icon-color);
+}
+.internal-form-checkbox-indeterminate-image {
+    .mage-svg-fill(@internal-form-checkbox-indeterminate-image, "#000", @inverse-form-radio-checked-icon-color);
+}
+
 & when (@media-common = true) {
     .field {
         .field-tooltip {
             .field-tooltip-action {
                 &:before {
                     content: "";
-                    .svg-fill(@question-svg-icon, "#000", @global-secondary-color);
+                    &:extend(.question-icon-secondary);
                     width: 19px;
                     height: 20px;
                 }
@@ -85,14 +104,18 @@
         // Select
         //
 
-        select:not([multiple]):not([size]) { .svg-fill(@internal-form-select-image, "#000", @inverse-form-select-icon-color); }
+        select:not([multiple]):not([size]) {
+            &:extend(.internal-form-select-image);
+        }
 
         //
         // Datalist
         //
 
         input:not([type="radio"]):not([type="checkbox"])[list]:hover,
-        input:not([type="radio"]):not([type="checkbox"])[list]:focus { .svg-fill(@internal-form-datalist-image, "#000", @inverse-form-datalist-icon-color); }
+        input:not([type="radio"]):not([type="checkbox"])[list]:focus {
+            &:extend(.internal-form-datalist-image);
+        }
 
         //
         // Radio and checkbox
@@ -129,9 +152,15 @@
         }
 
         // Icon
-        input[type="radio"]:checked { .svg-fill(@internal-form-radio-image, "#000", @inverse-form-radio-checked-icon-color); }
-        input[type="checkbox"]:checked { .svg-fill(@internal-form-checkbox-image, "#000", @inverse-form-radio-checked-icon-color); }
-        input[type="checkbox"]:indeterminate { .svg-fill(@internal-form-checkbox-indeterminate-image, "#000", @inverse-form-radio-checked-icon-color); }
+        input[type="radio"]:checked {
+            &:extend(.internal-form-radio-image);
+        }
+        input[type="checkbox"]:checked {
+            &:extend(.internal-form-checkbox-image);
+        }
+        input[type="checkbox"]:indeterminate {
+            &:extend(.internal-form-checkbox-indeterminate-image);
+        }
     }
     input {
         &:not([type="radio"]) {

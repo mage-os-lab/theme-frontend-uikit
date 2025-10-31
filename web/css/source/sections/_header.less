@@ -1,3 +1,30 @@
+.chevron-down-icon-global {
+    .mage-svg-fill(@chevron-down-svg-icon, "#000", @global-color);
+}
+.chevron-right-icon-global {
+    .mage-svg-fill(@chevron-right-svg-icon, "#000", @global-color);
+}
+.chevron-down-icon-inverse {
+    .mage-svg-fill(@chevron-down-svg-icon, "#000", @global-inverse-color);
+}
+.chevron-right-icon-inverse {
+    .mage-svg-fill(@chevron-right-svg-icon, "#000", @global-inverse-color);
+}
+.cart-icon-global {
+    .mage-svg-fill(@cart-svg-icon, "#000", @global-color);
+}
+.cog-icon-global {
+    .mage-svg-fill(@cog-svg-icon, "#000", @global-color);
+}
+.trash-icon-global {
+    .mage-svg-fill(@trash-svg-icon, "#000", @global-color);
+}
+.menu-icon-global {
+    .mage-svg-fill(@menu-svg-icon, "#000", @global-color);
+}
+.search-icon-global {
+    .mage-svg-fill(@search-svg-icon, "#000", @global-color);
+}
 & when (@media-common = true) {
   body {
     .page-wrapper {
@@ -41,7 +68,7 @@
                           > .ui-menu-icon {
                               &:after {
                                   content: "";
-                                  .svg-fill(@chevron-down-svg-icon, "#000", @global-color);
+                                  &:extend(.chevron-down-icon-global);
                                   width: 15px;
                                   height: 15px;
                                   background-size: cover;
@@ -54,7 +81,7 @@
                           .ui-menu-icon.ui-icon.ui-icon-caret-1-e {
                               &:after {
                                   content: "";
-                                  .svg-fill(@chevron-right-svg-icon, "#000", @global-color);
+                                  &:extend(.chevron-right-icon-global);
                                   width: 15px;
                                   height: 15px;
                                   background-size: cover;
@@ -64,7 +91,7 @@
                               .ui-menu-icon.ui-icon.ui-icon-caret-1-e {
                                   &:after {
                                       content: "";
-                                      .svg-fill(@chevron-right-svg-icon, "#000", @global-color);
+                                      &:extend(.chevron-right-icon-global);
                                   }
                               }
                           }
@@ -150,7 +177,7 @@
                     &:extend(.uk-position-relative);
                     &:before {
                         content: "";
-                        .svg-fill(@cart-svg-icon, "#000", @global-color);
+                        &:extend(.cart-icon-global);
                         height: 25px;
                         width: 25px;
                         background-size: cover;
@@ -212,12 +239,12 @@
                     }
                     &.edit {
                         &:before {
-                            .svg-fill(@cog-svg-icon, "#000", @global-color);
+                            &:extend(.cog-icon-global);
                         }
                     }
                     &.delete {
                         &:before {
-                            .svg-fill(@trash-svg-icon, "#000", @global-color);
+                            &:extend(.trash-icon-global);
                         }
                     }
                   }
@@ -235,7 +262,7 @@
             .nav-toggle {
                 &:before {
                     content: "";
-                    .svg-fill(@menu-svg-icon, "#000", @global-color);
+                    &:extend(.menu-icon-global);
                     height: 25px;
                     width: 25px;
                     background-size: cover;
@@ -249,7 +276,7 @@
                 .label {
                     &:before {
                         content: "";
-                        .svg-fill(@search-svg-icon, "#000", @global-color);
+                        &:extend(.search-icon-global);
                         height: 25px;
                         width: 25px;
                         background-size: cover;
@@ -301,7 +328,7 @@
                             >.level-top {
                                 > .ui-menu-icon {
                                     &:after {
-                                        .svg-fill(@chevron-down-svg-icon, "#000", @global-inverse-color);
+                                        .mage-svg-fill(@chevron-down-svg-icon, "#000", @global-inverse-color);
                                     }
                                 }
                             }
@@ -310,13 +337,13 @@
                             > a {
                                 .ui-menu-icon.ui-icon.ui-icon-caret-1-e {
                                     &:after {
-                                        .svg-fill(@chevron-right-svg-icon, "#000", @global-inverse-color);
+                                        &:extend(.chevron-right-icon-inverse);
                                     }
                                 }
                                 &:hover {
                                     .ui-menu-icon.ui-icon.ui-icon-caret-1-e {
                                         &:after {
-                                            .svg-fill(@chevron-right-svg-icon, "#000", @global-inverse-color);
+                                            &:extend(.chevron-right-icon-inverse);
                                         }
                                     }
                                 }
@@ -336,7 +363,7 @@
                                 &.search {
                                     &:before {
                                         content: "";
-                                        .svg-fill(@search-svg-icon, "#000", @global-color);
+                                        &:extend(.search-icon-global);
                                         height: 22px;
                                         width: 22px;
                                         background-size: cover;

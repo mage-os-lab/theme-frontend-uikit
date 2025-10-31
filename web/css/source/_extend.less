@@ -2,9 +2,24 @@
 // Core
 //
 @import '../uikit/_uikit.less';
+
+// SVG
+// ========================================================================
+
+.mage-svg-fill(@src, @color-default, @color-new, @property: background-image) {
+
+    @escape-color-default: escape(@color-default);
+    @escape-color-new: escape("@{color-new}");
+
+    @data-uri: data-uri('image/svg+xml;charset=UTF-8', "@{src}");
+    @replace-src: replace("@{data-uri}", "@{escape-color-default}", "@{escape-color-new}", "g");
+
+        @{property}: e(@replace-src);
+}
+
+
 @import 'magento-lib/_variables.less';
 @import 'assets/_icons.less';
-@import 'assets/forms/_override.less';
 
 //
 // Commons
@@ -30,12 +45,3 @@
 @import 'sections/_sidebar-additional.less';
 @import 'sections/_toolbar.less';
 @import 'sections/_wishlist.less';
-
-//
-// Sections
-//
-@import 'routes/_catalog_product.less';
-@import 'routes/_catalog_search.less';
-@import 'routes/_checkout_cart_index.less';
-@import 'routes/_checkout_index_index.less';
-@import 'routes/_customer_account.less';

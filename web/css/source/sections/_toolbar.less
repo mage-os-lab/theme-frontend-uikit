@@ -1,3 +1,16 @@
+.grid-icon-secondary {
+    .mage-svg-fill(@grid-svg-icon, "#000", @global-secondary-color);
+}
+.grid-icon-inverse {
+    .mage-svg-fill(@grid-svg-icon, "#000", @global-inverse-color);
+}
+.list-icon-secondary {
+    .mage-svg-fill(@list-svg-icon, "#000", @global-secondary-color);
+}
+.list-icon-inverse {
+    .mage-svg-fill(@list-svg-icon, "#000", @global-inverse-color);
+}
+
 & when (@media-common = true) {
     .toolbar {
         .modes {
@@ -28,13 +41,13 @@
                         content: "";
                         width: 20px;
                         height: 20px;
-                        .svg-fill(@grid-svg-icon, "#000", @global-secondary-color);
+                        &:extend(.grid-icon-secondary);
                     }
 
                     &:hover {
                         &:not(.active) {
                             &:before {
-                                .svg-fill(@grid-svg-icon, "#000", @global-inverse-color);
+                                &:extend(.grid-icon-inverse);
                             }
                         }
                     }
@@ -45,13 +58,13 @@
                         content: "";
                         width: 20px;
                         height: 20px;
-                        .svg-fill(@list-svg-icon, "#000", @global-secondary-color);
+                        &:extend(.list-icon-secondary);
                     }
 
                     &:hover {
                         &:not(.active) {
                             &:before {
-                                .svg-fill(@list-svg-icon, "#000", @global-inverse-color);
+                                &:extend(.list-icon-inverse);
                             }
                         }
                     }
@@ -68,13 +81,13 @@
 
                     &.mode-grid {
                         &:before {
-                            .svg-fill(@grid-svg-icon, "#000", @global-inverse-color);
+                            &:extend(.grid-icon-inverse);
                         }
                     }
 
                     &.mode-list {
                         &:before {
-                            .svg-fill(@list-svg-icon, "#000", @global-inverse-color);
+                            &:extend(.list-icon-inverse);
                         }
                     }
                 }
