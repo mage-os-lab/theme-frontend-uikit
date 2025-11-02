@@ -217,7 +217,9 @@ function send(url, env) {
             if (prop in xhr) {
                 try {
                     xhr[prop] = env[prop];
-                } catch {}
+                } catch (e) {
+                    // noop
+                }
             }
         }
 

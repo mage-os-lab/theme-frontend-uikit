@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
-    "uikit": "^3.24"
+    "uikit": "3.23.7"
   },
   "scripts": {
     "postinstall": "bash copy-assets.sh"

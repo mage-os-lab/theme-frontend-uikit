@@ -285,7 +285,7 @@ export default {
                     allowfullscreen: '',
                     style: 'max-width: 100%; box-sizing: border-box;',
                     'uk-responsive': '',
-                    'uk-video': Boolean(this.videoAutoplay),
+                    'uk-video': `${Boolean(this.videoAutoplay)}`,
                 };
 
                 // Image
@@ -310,9 +310,8 @@ export default {
                         playsinline: '',
                         controls: inline ? null : '',
                         loop: inline ? '' : null,
-                        muted: inline ? '' : null,
                         poster: this.videoAutoplay ? null : item.poster,
-                        'uk-video': Boolean(this.videoAutoplay),
+                        'uk-video': inline ? 'automute: true' : Boolean(this.videoAutoplay),
                         ...attrs,
                     });
 
@@ -374,7 +373,7 @@ export default {
                                 ...attrs,
                             }),
                         );
-                    } catch {
+                    } catch (e) {
                         this.setError(item);
                     }
                 }
@@ -461,8 +460,7 @@ function toThumbnavItem(item, videoAutoplay) {
                     src: item.thumb,
                     loop: '',
                     playsinline: '',
-                    muted: '',
-                    'uk-video': videoAutoplay === 'inline',
+                    'uk-video': `autoplay: ${Boolean(videoAutoplay)}; automute: true`,
                 })
               : createEl('canvas');
 

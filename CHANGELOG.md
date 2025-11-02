@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and this project adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## 1.2.1
+## Fixed
+- Downgrade UIkit to 3.23.7 due to incompatibility with wikimedia lessc
+
 ## 1.2
 ## Fixed
 - Fix less compilation for 1.0.6 version (~ 2.4.7) and newer versions supporting wikimedia lessc ( ~ 2.4.8 ) for client-side frontend developer mode compilation also
