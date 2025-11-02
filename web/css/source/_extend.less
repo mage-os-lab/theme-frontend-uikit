@@ -1,12 +1,7 @@
-//
-// Core
-//
-@import '../uikit/_uikit.less';
-
 // SVG
 // ========================================================================
 
-.mage-svg-fill(@src, @color-default, @color-new, @property: background-image) {
+.svg-fill(@src, @color-default, @color-new, @property: background-image) {
 
     @escape-color-default: escape(@color-default);
     @escape-color-new: escape("@{color-new}");
@@ -17,9 +12,15 @@
         @{property}: e(@replace-src);
 }
 
+//
+// Core
+//
+@import '../uikit/_uikit.less';
+
 
 @import 'magento-lib/_variables.less';
 @import 'assets/_icons.less';
+@import 'assets/forms/_override.less';
 
 //
 // Commons
